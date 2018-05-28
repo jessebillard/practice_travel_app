@@ -1,0 +1,11 @@
+
+
+<h4>Your Trips:</h4>
+
+<ul>
+    <% @traveler.trips.each do |trip| %>
+        <li>
+            <%= trip.location.city %>, <%= trip.location.country %> - Trip Date: <%= trip.trip_date %>
+        </li>
+    <% end %>
+</ul>

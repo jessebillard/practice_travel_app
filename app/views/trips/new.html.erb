@@ -1,0 +1,28 @@
+<h1>Book A Trip!</h1>
+
+<%= form_for @trip do |f| %>
+
+<%= f.label :location_id %>
+<%= f.collection_select :location_id, Location.all, :id, :city %>
+<br>
+
+<%= f.label :trip_date %>
+<%= f.date_select :trip_date %>
+<br>
+
+<%= f.label :trip_time %>
+<%= f.time_select :trip_time %>
+<br>
+<%= f.fields_for :traveler do |trav| %>
+    <%= trav.label :first_name %>
+    <%= trav.text_field :first_name %>
+
+    <%= trav.label :last_name %>
+    <%= trav.text_field :last_name %>
+    <br>
+<% end %>
+
+<br>
+<%= f.submit %>
+
+<% end %>

@@ -1,0 +1,12 @@
+<h1>Trip Confirmation</h1>
+
+<h4>Congrats on your trip <%= @trip.traveler.first_name %>!</h4>
+<h4>City: <%= @trip.location.city %></h4>
+<h4>Country: <%= @trip.location.country %></h4>
+<h4>Date: <%= @trip.trip_date %></h4>
+
+<h4><%= link_to "Check More Locations", locations_path%></h4>
+
+<h4><%= link_to "Check Out Your Profile", traveler_path(@trip.traveler)%></h4>
+
+<h4><%= link_to "Edit This Trip", edit_trip_path(@trip) %></h4>

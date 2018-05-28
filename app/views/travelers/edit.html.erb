@@ -1,0 +1,16 @@
+<h1>Edit Your Profile</h1>
+
+<%= form_for @traveler do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %> <br>
+
+    <%= f.label :dob %>
+    <%= f.text_field :dob %> <br>
+
+    <%= f.label :hometown %>
+    <%= f.text_field :hometown %>
+
+    <%= f.submit %>
+
+<% end %>

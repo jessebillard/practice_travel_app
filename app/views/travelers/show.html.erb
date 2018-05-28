@@ -1,0 +1,22 @@
+<h1>Traveler Profile</h1>
+
+<h4>Welcome to your account <%= full_name(@traveler) %>!</h4>
+
+<h4>First Name: <%= @traveler.first_name %></h4>
+<h4>Last Name: <%= @traveler.last_name %></h4>
+<h4>D.O.B: <%= @traveler.dob %></h4>
+<h4>Hometown: <%= @traveler.hometown %></h4>
+
+<h4>Your Trips:</h4> 
+
+<ul>
+    <% @traveler.trips.each do |trip| %>
+        <li>
+            <%= trip.location.city %>, <%= trip.location.country %> - Trip Date: <%= date(trip.trip_date) %> - Trip Time: <%= time(trip.trip_time) %>
+        </li>
+    <% end %>
+</ul>
+
+<h4><%= link_to "Edit Your Profile", edit_traveler_path(@traveler)%></h4>
+
+<h4><%= link_to "Book A Trip", new_trip_path %></h4>
